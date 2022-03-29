@@ -42,26 +42,34 @@
 
 // maxChar("Aakaahsksjaaljsa")
 
-const maxChar = (str) =>{
-    let obj = {}
-    let max = 1
-    let maxChar = str[0]
-    for (let i of str){
-        if(obj[i]){
-            if(obj[i] >= max){
-                max++
-            }
-            maxChar = i
-            obj[i]++
-        }
-        else{
-            obj[i] =1
-        }
-    }
+// const maxChar = (str) =>{
+//     let obj = {}
+//     let max = 1
+//     let maxChar = str[0]
+//     for (let i of str){
+//         if(obj[i]){
+//             if(obj[i] >= max){
+//                 max++
+//             }
+//             maxChar = i
+//             obj[i]++
+//         }
+//         else{
+//             obj[i] =1
+//         }
+//     }
 
-    console.log(maxChar , max)
+//     console.log(maxChar , max)
+// }
+
+// maxChar("AakaahsksjaaljsaAaAAAAAAAAAAAAAA")
+
+
+// ================================================Reverse a Integer================================================
+
+const reverseInt = (n) =>{
+    return parseInt(n.toString().split('').reverse().join(''))
 }
 
-maxChar("AakaahsksjaaljsaAaAAAAAAAAAAAAAA")
-
+console.log(reverseInt(1564))
 
