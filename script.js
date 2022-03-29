@@ -67,9 +67,30 @@
 
 // ================================================Reverse a Integer================================================
 
-const reverseInt = (n) =>{
-    return parseInt(n.toString().split('').reverse().join(''))
+// const reverseInt = (n) =>{
+//     return parseInt(n.toString().split('').reverse().join(''))
+// }
+
+// console.log(reverseInt(1564))
+
+
+// ===========================================Fizzbuzz=========================================================
+
+const fizzBuzz = (n) => {
+    for(let i=1 ; i<=n; i++){
+        if(i%3 === 0 && i%5 !==0){
+            console.log("fizz")
+        }
+        else if(i%5 ===0 && i%3 !==0){
+            console.log('buzz')
+        }
+        else if(i%3 === 0 && i%5 ===0){
+            console.log('fizzbuzz')
+        }
+        else{
+            console.log(i)
+        }
+    }
 }
 
-console.log(reverseInt(1564))
-
+fizzBuzz(15)
