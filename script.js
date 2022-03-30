@@ -104,14 +104,32 @@
 
 // =========================================Given two strings, return true if they are anagrams of one another=============
 
-const isAnagram = ( str1 , str2) =>{
-    var a = str1.toLowerCase().split("").sort().join("")
-    var b = str2.toLowerCase().split("").sort().join("")
+// const isAnagram = ( str1 , str2) =>{
+//     var a = str1.toLowerCase().split("").sort().join("")
+//     var b = str2.toLowerCase().split("").sort().join("")
 
-    console.log(a===b)
-}
+//     console.log(a===b)
+// }
 
-isAnagram("Mary" , "army")
+// isAnagram("Mary" , "army")
+
+
+//  =============================Given no if binary or not============================
+
+const isBinary = (num) => {
+    let binary= false
+    for(let i of String(num)){
+        if(i==="0" || i=== "1"){
+            binary = true
+        }
+        else{
+            return false
+        }
+    }
+    return binary
+} 
+
+console.log(isBinary(10110101510))
 
 
 
