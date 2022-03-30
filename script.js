@@ -96,8 +96,22 @@
 
 // ==================================Given a string, reverse each word in the sentence======================================
 
-var str = "Welcome to this Javascript Guide!"
+// var str = "Welcome to this Javascript Guide!"
 
-var str2 = str.split("").reverse().join("")
+// var str2 = str.split("").reverse().join("")
 
-console.log(str2.split(" ").reverse().join(" "))
+// console.log(str2.split(" ").reverse().join(" "))
+
+// =========================================Given two strings, return true if they are anagrams of one another=============
+
+const isAnagram = ( str1 , str2) =>{
+    var a = str1.toLowerCase().split("").sort().join("")
+    var b = str2.toLowerCase().split("").sort().join("")
+
+    console.log(a===b)
+}
+
+isAnagram("Mary" , "army")
+
+
+
