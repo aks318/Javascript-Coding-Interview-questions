@@ -76,21 +76,28 @@
 
 // ===========================================Fizzbuzz=========================================================
 
-const fizzBuzz = (n) => {
-    for(let i=1 ; i<=n; i++){
-        if(i%3 === 0 && i%5 !==0){
-            console.log("fizz")
-        }
-        else if(i%5 ===0 && i%3 !==0){
-            console.log('buzz')
-        }
-        else if(i%3 === 0 && i%5 ===0){
-            console.log('fizzbuzz')
-        }
-        else{
-            console.log(i)
-        }
-    }
-}
+// const fizzBuzz = (n) => {
+//     for(let i=1 ; i<=n; i++){
+//         if(i%3 === 0 && i%5 !==0){
+//             console.log("fizz")
+//         }
+//         else if(i%5 ===0 && i%3 !==0){
+//             console.log('buzz')
+//         }
+//         else if(i%3 === 0 && i%5 ===0){
+//             console.log('fizzbuzz')
+//         }
+//         else{
+//             console.log(i)
+//         }
+//     }
+// }
+// fizzBuzz(15)
 
-fizzBuzz(15)
+// ==================================Given a string, reverse each word in the sentence======================================
+
+var str = "Welcome to this Javascript Guide!"
+
+var str2 = str.split("").reverse().join("")
+
+console.log(str2.split(" ").reverse().join(" "))
