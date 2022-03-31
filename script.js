@@ -133,17 +133,37 @@
 
 // ================================Find the largest and smallest number in unsorted array================
 
-const findMinMax = (arr) => {
-    let min = arr[0]
-    let max = arr[0]
+// const findMinMax = (arr) => {
+//     let min = arr[0]
+//     let max = arr[0]
+//     for (let i of arr){
+//         if(i>max){
+//             max = i
+//         }
+//         else if(i<min){
+//             min = i
+//         }
+//     }
+//     console.log(min , max)
+// }
+// findMinMax([5,6,7,3,9,-1,10,12,4,-5])
+
+// ==========================Find 1st 2 max from unsorted array============================
+
+const findFirstTwoMax = (arr) => {
+    let max1 = arr[0]
+    let max2 = arr[0]
+
     for (let i of arr){
-        if(i>max){
-            max = i
+        if(i>max1){
+            max2 = max1
+            max1 = i
         }
-        else if(i<min){
-            min = i
+        else if(i>max2){
+            max2 = i
         }
     }
-    console.log(min , max)
+    console.log(max1 , max2)
 }
-findMinMax([5,6,7,3,9,-1,10,12,4,-5])
+
+findFirstTwoMax([5,6,7,3,9,-1,10,12,4,-5,18,19])
