@@ -116,20 +116,34 @@
 
 //  =============================Given no if binary or not============================
 
-const isBinary = (num) => {
-    let binary= false
-    for(let i of String(num)){
-        if(i==="0" || i=== "1"){
-            binary = true
+// const isBinary = (num) => {
+//     let binary= false
+//     for(let i of String(num)){
+//         if(i==="0" || i=== "1"){
+//             binary = true
+//         }
+//         else{
+//             return false
+//         }
+//     }
+//     return binary
+// } 
+// console.log(isBinary(10110101510))
+
+
+// ================================Find the largest and smallest number in unsorted array================
+
+const findMinMax = (arr) => {
+    let min = arr[0]
+    let max = arr[0]
+    for (let i of arr){
+        if(i>max){
+            max = i
         }
-        else{
-            return false
+        else if(i<min){
+            min = i
         }
     }
-    return binary
-} 
-
-console.log(isBinary(10110101510))
-
-
-
+    console.log(min , max)
+}
+findMinMax([5,6,7,3,9,-1,10,12,4,-5])
