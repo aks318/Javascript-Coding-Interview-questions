@@ -170,29 +170,44 @@
 
 // =========================Find 2nd max and 2nd min from unsorted array================================
 
-const findSecondMaxMin = (arr) =>{
-    let max1 = arr[0]
-    let max2 = arr[0]
-    let min1 = arr[0]
-    let min2 = arr[0]
+// const findSecondMaxMin = (arr) =>{
+//     let max1 = arr[0]
+//     let max2 = arr[0]
+//     let min1 = arr[0]
+//     let min2 = arr[0]
 
+//     for (let i of arr){
+//         if(i>max1){
+//             max2 = max1
+//             max1 = i
+//         }
+//         else if(i>max2){
+//             max2 = i
+//         }
+
+//         if(i<min1){
+//             min2 = min1
+//             min1 = i
+//         }
+//         else if(i<min2){
+//             min2 = i
+//         }
+//     }
+//     console.log(min2 , max2)
+// }
+// findSecondMaxMin([5,6,7,-3,9,-1,10,12,4,-5,28,19])
+
+// ===============================Find no. of pair from array whose sum equals to given no.=================
+
+const findTotalPair = (arr , n) => {
+    total = 0
     for (let i of arr){
-        if(i>max1){
-            max2 = max1
-            max1 = i
-        }
-        else if(i>max2){
-            max2 = i
-        }
-
-        if(i<min1){
-            min2 = min1
-            min1 = i
-        }
-        else if(i<min2){
-            min2 = i
+        if(arr.includes(i+n)){ //in operator checks if index is their or not
+            
+            total++
         }
     }
-    console.log(min2 , max2)
+    return total
 }
-findSecondMaxMin([5,6,7,-3,9,-1,10,12,4,-5,28,19])
+
+console.log(findTotalPair([2,3,6,4,9,5,19,15,12] , 4))
