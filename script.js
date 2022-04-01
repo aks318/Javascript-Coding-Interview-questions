@@ -199,15 +199,30 @@
 
 // ===============================Find no. of pair from array whose sum equals to given no.=================
 
-const findTotalPair = (arr , n) => {
-    total = 0
-    for (let i of arr){
-        if(arr.includes(i+n)){ //in operator checks if index is their or not
+// const findTotalPair = (arr , n) => {
+//     total = 0
+//     for (let i of arr){
+//         if(arr.includes(i+n)){ //in operator checks if index is their or not
             
-            total++
+//             total++
+//         }
+//     }
+//     return total
+// }
+
+// console.log(findTotalPair([2,3,6,4,9,5,19,15,12] , 4))
+
+// ==========================Move all negative elements to start======================================
+
+const moveNegToStart = (arr) => {
+    brr = []
+    for (let i=0 ; i<arr.length ; i++){
+        if(arr[i]>0){
+            brr.push(arr[i])
         }
+        else brr.unshift(arr[i])
     }
-    return total
+    return brr
 }
 
-console.log(findTotalPair([2,3,6,4,9,5,19,15,12] , 4))
+console.log(moveNegToStart([2,4,5,-4,-5,-6,3,6,-4,2]))
