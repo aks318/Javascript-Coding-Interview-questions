@@ -229,17 +229,27 @@
 
 // ======================Bubble sort algorithm =================================
 
-const bubbleSort = (arr) => {
-    for (let i=0 ; i<arr.length ; i++){
-        for(let j=0 ; j<arr.length - i - 1; j++){
-            if(arr[j] > arr[j+1]){
-                var temp = arr[j]
-                arr[j] = arr[j+1]
-                arr[j+1] = temp
-            }
-        }
-    }
+// const bubbleSort = (arr) => {
+//     for (let i=0 ; i<arr.length ; i++){
+//         for(let j=0 ; j<arr.length - i - 1; j++){
+//             if(arr[j] > arr[j+1]){
+//                 var temp = arr[j]
+//                 arr[j] = arr[j+1]
+//                 arr[j+1] = temp
+//             }
+//         }
+//     }
+//     console.log(arr)
+// }
+
+// bubbleSort([3,4,1,5,7,2,3,6,8,9,1,10,2,29,1])
+
+// ==========================Find kth largest and kth smallest from array=================
+
+const findKthLargestAndSmallest = (arr , k) => {
+    arr.sort((a,b) => a-b)
     console.log(arr)
+    return([arr[k-1] , arr[arr.length - k]])
 }
 
-bubbleSort([3,4,1,5,7,2,3,6,8,9,1,10,2,29,1])
+console.log(findKthLargestAndSmallest([1,2,3,4,5,6,7,8,9,10] , 3))
