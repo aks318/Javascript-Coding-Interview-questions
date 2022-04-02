@@ -214,15 +214,32 @@
 
 // ==========================Move all negative elements to start======================================
 
-const moveNegToStart = (arr) => {
-    brr = []
+// const moveNegToStart = (arr) => {
+//     brr = []
+//     for (let i=0 ; i<arr.length ; i++){
+//         if(arr[i]>0){
+//             brr.push(arr[i])
+//         }
+//         else brr.unshift(arr[i])
+//     }
+//     return brr
+// }
+
+// console.log(moveNegToStart([2,4,5,-4,-5,-6,3,6,-4,2]))
+
+// ======================Bubble sort algorithm =================================
+
+const bubbleSort = (arr) => {
     for (let i=0 ; i<arr.length ; i++){
-        if(arr[i]>0){
-            brr.push(arr[i])
+        for(let j=0 ; j<arr.length - i - 1; j++){
+            if(arr[j] > arr[j+1]){
+                var temp = arr[j]
+                arr[j] = arr[j+1]
+                arr[j+1] = temp
+            }
         }
-        else brr.unshift(arr[i])
     }
-    return brr
+    console.log(arr)
 }
 
-console.log(moveNegToStart([2,4,5,-4,-5,-6,3,6,-4,2]))
+bubbleSort([3,4,1,5,7,2,3,6,8,9,1,10,2,29,1])
