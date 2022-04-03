@@ -256,19 +256,44 @@
 
 // ====================program which accept a number as input and insert dashes (-) between each two even numbers===========
 
-const insertDash = (num) => {
-    let arr = []
-    for (let i=0 ; i<num.length-1 ; i++){
-        if(num[i] % 2 ===0 && num[i+1] % 2 === 0){
-            arr.push(num[i])
-            arr.push("-")
+// const insertDash = (num) => {
+//     let arr = []
+//     for (let i=0 ; i<num.length-1 ; i++){
+//         if(num[i] % 2 ===0 && num[i+1] % 2 === 0){
+//             arr.push(num[i])
+//             arr.push("-")
+//         }
+//         else{
+//             arr.push(num[i])
+//         }
+//     }
+//     arr.push(num[num.length -1])
+//     return(arr.join(''))
+// }
+
+// console.log(insertDash("02456"))
+
+// ======================Find the most frequent item of an array===================
+
+const mostFreq = (arr) => {
+    let mf = 1
+    let m = 0
+    let item
+
+    for(let i=0 ; i<arr.length ; i++){
+        for(let j=i ; j<arr.length ; j++){
+            if(arr[i] === arr[j]){
+                m++;
+            }
+            if (mf < m){
+                mf = m
+                item = arr[i]
+            }
         }
-        else{
-            arr.push(num[i])
-        }
+        m = 0
     }
-    arr.push(num[num.length -1])
-    return(arr.join(''))
+
+    return [item , mf]
 }
 
-console.log(insertDash("02456"))
+console.log(mostFreq([3, 'a', 'a', 'a', 2, 3, 'a', 3, 'a', 2, 4, 9, 3]))
