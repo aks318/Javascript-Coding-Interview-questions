@@ -246,10 +246,29 @@
 
 // ==========================Find kth largest and kth smallest from array=================
 
-const findKthLargestAndSmallest = (arr , k) => {
-    arr.sort((a,b) => a-b)
-    console.log(arr)
-    return([arr[k-1] , arr[arr.length - k]])
+// const findKthLargestAndSmallest = (arr , k) => {
+//     arr.sort((a,b) => a-b)
+//     console.log(arr)
+//     return([arr[k-1] , arr[arr.length - k]])
+// }
+
+// console.log(findKthLargestAndSmallest([1,2,3,4,5,6,7,8,9,10] , 3))
+
+// ====================program which accept a number as input and insert dashes (-) between each two even numbers===========
+
+const insertDash = (num) => {
+    let arr = []
+    for (let i=0 ; i<num.length-1 ; i++){
+        if(num[i] % 2 ===0 && num[i+1] % 2 === 0){
+            arr.push(num[i])
+            arr.push("-")
+        }
+        else{
+            arr.push(num[i])
+        }
+    }
+    arr.push(num[num.length -1])
+    return(arr.join(''))
 }
 
-console.log(findKthLargestAndSmallest([1,2,3,4,5,6,7,8,9,10] , 3))
+console.log(insertDash("02456"))
