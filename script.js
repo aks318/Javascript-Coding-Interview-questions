@@ -300,17 +300,38 @@
 
 // ==============swap the case of each character from string=========================
 
-const swapChar = (str) => {
-    arr = str.split("")
-    for (let i=0 ; i<arr.length ; i++){
-        if(arr[i] === arr[i].toLowerCase()) {
-            arr[i] = arr[i].toUpperCase()
-        }
-        else if(arr[i] === arr[i].toUpperCase()) {
-            arr[i] = arr[i].toLowerCase()
-        }
-    }
-    return arr.join('')
+// const swapChar = (str) => {
+//     arr = str.split("")
+//     for (let i=0 ; i<arr.length ; i++){
+//         if(arr[i] === arr[i].toLowerCase()) {
+//             arr[i] = arr[i].toUpperCase()
+//         }
+//         else if(arr[i] === arr[i].toUpperCase()) {
+//             arr[i] = arr[i].toLowerCase()
+//         }
+//     }
+//     return arr.join('')
+// }
+
+// console.log(swapChar("The World is waiting For me to become rich."))
+
+//===================================remove duplicated from list===========================
+// ====================Method 1====================
+let arr = [2,3,5,2,8,9,7,5,2,9,7]
+// let uniqueList = [...new Set(arr)]
+// console.log(uniqueList)
+
+// ======================================Method 2=============
+let obj={}
+let uniqueList=[]
+for (let i=0 ; i<arr.length ; i++){
+    obj[arr[i]] = 0
 }
 
-console.log(swapChar("The World is waiting For me to become rich."))
+for(let i in obj) uniqueList.push(i)
+console.log(uniqueList)
+
+
+
+
+
