@@ -275,25 +275,42 @@
 
 // ======================Find the most frequent item of an array===================
 
-const mostFreq = (arr) => {
-    let mf = 1
-    let m = 0
-    let item
+// const mostFreq = (arr) => {
+//     let mf = 1
+//     let m = 0
+//     let item
 
-    for(let i=0 ; i<arr.length ; i++){
-        for(let j=i ; j<arr.length ; j++){
-            if(arr[i] === arr[j]){
-                m++;
-            }
-            if (mf < m){
-                mf = m
-                item = arr[i]
-            }
+//     for(let i=0 ; i<arr.length ; i++){
+//         for(let j=i ; j<arr.length ; j++){
+//             if(arr[i] === arr[j]){
+//                 m++;
+//             }
+//             if (mf < m){
+//                 mf = m
+//                 item = arr[i]
+//             }
+//         }
+//         m = 0
+//     }
+
+//     return [item , mf]
+// }
+
+// console.log(mostFreq([3, 'a', 'a', 'a', 2, 3, 'a', 3, 'a', 2, 4, 9, 3]))
+
+// ==============swap the case of each character from string=========================
+
+const swapChar = (str) => {
+    arr = str.split("")
+    for (let i=0 ; i<arr.length ; i++){
+        if(arr[i] === arr[i].toLowerCase()) {
+            arr[i] = arr[i].toUpperCase()
         }
-        m = 0
+        else if(arr[i] === arr[i].toUpperCase()) {
+            arr[i] = arr[i].toLowerCase()
+        }
     }
-
-    return [item , mf]
+    return arr.join('')
 }
 
-console.log(mostFreq([3, 'a', 'a', 'a', 2, 3, 'a', 3, 'a', 2, 4, 9, 3]))
+console.log(swapChar("The World is waiting For me to become rich."))
