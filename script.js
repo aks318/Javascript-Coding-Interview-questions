@@ -317,19 +317,39 @@
 
 //===================================remove duplicated from list===========================
 // ====================Method 1====================
-let arr = [2,3,5,2,8,9,7,5,2,9,7]
+// let arr = [2,3,5,2,8,9,7,5,2,9,7]
 // let uniqueList = [...new Set(arr)]
 // console.log(uniqueList)
 
 // ======================================Method 2=============
-let obj={}
-let uniqueList=[]
-for (let i=0 ; i<arr.length ; i++){
-    obj[arr[i]] = 0
+// let obj={}
+// let uniqueList=[]
+// for (let i=0 ; i<arr.length ; i++){
+//     obj[arr[i]] = 0
+// }
+
+// for(let i in obj) uniqueList.push(i)
+// console.log(uniqueList)
+
+
+// ========================JavaScript function to fill an array with values (numeric, string with one character)============
+
+const fillArray = (c1 , c2 , n) => {
+    let c1Code = c1.charCodeAt(0)
+    let c2Code = c2.charCodeAt(0)
+    let i=c1Code + n
+
+    let arr = [c1]
+    while(i<c2Code){
+        arr.push(String.fromCharCode(i))
+        i+=n
+    }
+
+    return arr
 }
 
-for(let i in obj) uniqueList.push(i)
-console.log(uniqueList)
+console.log(fillArray('a' ,'z' , 3))
+  
 
 
 
