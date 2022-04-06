@@ -353,12 +353,22 @@
 
 // =========================Shift array to right by given number======================================
 
-const shiftRight = (arr , n) => {
+// const shiftRight = (arr , n) => {
+//     n = n % arr.length
+//     let arr2 = arr.splice(arr.length-n , arr.length-1)
+//     return arr2.concat(arr)
+// }
+
+// console.log(shiftRight([1,2,3,4,5] , 6))
+
+// =========================Shift array to right by given number======================================
+
+
+const shiftLeft = (arr , n) => {
     n = n % arr.length
-    let arr2 = arr.splice(arr.length-n , arr.length-1)
-    return arr2.concat(arr)
+    let arr2 = arr.splice(0 , n)
+    return arr.concat(arr2)
 }
 
-console.log(shiftRight([1,2,3,4,5] , 6))
-
+console.log(shiftLeft([1,2,3,4,5] , 6))
 
