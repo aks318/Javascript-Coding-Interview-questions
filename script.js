@@ -334,24 +334,31 @@
 
 // ========================JavaScript function to fill an array with values (numeric, string with one character)============
 
-const fillArray = (c1 , c2 , n) => {
-    let c1Code = c1.charCodeAt(0)
-    let c2Code = c2.charCodeAt(0)
-    let i=c1Code + n
+// const fillArray = (c1 , c2 , n) => {
+//     let c1Code = c1.charCodeAt(0)
+//     let c2Code = c2.charCodeAt(0)
+//     let i=c1Code + n
 
-    let arr = [c1]
-    while(i<c2Code){
-        arr.push(String.fromCharCode(i))
-        i+=n
-    }
+//     let arr = [c1]
+//     while(i<c2Code){
+//         arr.push(String.fromCharCode(i))
+//         i+=n
+//     }
 
-    return arr
-}
+//     return arr
+// }
 
-console.log(fillArray('a' ,'z' , 3))
+// console.log(fillArray('a' ,'z' , 3))
   
 
+// =========================Shift array to right by given number======================================
 
+const shiftRight = (arr , n) => {
+    n = n % arr.length
+    let arr2 = arr.splice(arr.length-n , arr.length-1)
+    return arr2.concat(arr)
+}
 
+console.log(shiftRight([1,2,3,4,5] , 6))
 
 
