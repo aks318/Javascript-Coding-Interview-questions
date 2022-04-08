@@ -364,11 +364,34 @@
 // =========================Shift array to right by given number======================================
 
 
-const shiftLeft = (arr , n) => {
-    n = n % arr.length
-    let arr2 = arr.splice(0 , n)
-    return arr.concat(arr2)
+// const shiftLeft = (arr , n) => {
+//     n = n % arr.length
+//     let arr2 = arr.splice(0 , n)
+//     return arr.concat(arr2)
+// }
+
+// console.log(shiftLeft([1,2,3,4,5] , 6))
+
+// =====================Replace emoji with spaces========================
+
+const emojify = (msg , emj) => {
+    if(typeof msg === 'string'){
+        let arr = msg.split(" ")
+        if(arr.length <= 1){
+            console.log('invalid string')
+        }
+        else{
+            console.log(arr.join(emj))
+        }
+    }
+    else if(typeof msg === 'object'){
+        let newmsg = (String(msg))
+        let arr = newmsg.split(" ").join(emj)
+        console.log(arr)
+    }
 }
 
-console.log(shiftLeft([1,2,3,4,5] , 6))
+emojify(" some message here" , "/:")
+emojify("here" , "/:")
+emojify({hello : 'world'} , '/:')
 
