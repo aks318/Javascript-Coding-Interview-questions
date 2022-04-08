@@ -374,24 +374,32 @@
 
 // =====================Replace emoji with spaces========================
 
-const emojify = (msg , emj) => {
-    if(typeof msg === 'string'){
-        let arr = msg.split(" ")
-        if(arr.length <= 1){
-            console.log('invalid string')
-        }
-        else{
-            console.log(arr.join(emj))
-        }
-    }
-    else if(typeof msg === 'object'){
-        let newmsg = (String(msg))
-        let arr = newmsg.split(" ").join(emj)
-        console.log(arr)
-    }
+// const emojify = (msg , emj) => {
+//     if(typeof msg === 'string'){
+//         let arr = msg.split(" ")
+//         if(arr.length <= 1){
+//             console.log('invalid string')
+//         }
+//         else{
+//             console.log(arr.join(emj))
+//         }
+//     }
+//     else if(typeof msg === 'object'){
+//         let newmsg = (String(msg))
+//         let arr = newmsg.split(" ").join(emj)
+//         console.log(arr)
+//     }
+// }
+
+// emojify(" some message here" , "/:")
+// emojify("here" , "/:")
+// emojify({hello : 'world'} , '/:')
+
+// ==============================program to compute the union of two arrays=============
+
+const unionArray = (arr1 , arr2) =>{
+    console.log([...new Set(arr1.concat(arr2))])
 }
 
-emojify(" some message here" , "/:")
-emojify("here" , "/:")
-emojify({hello : 'world'} , '/:')
+unionArray([1,2,3] , [2,3,4,5])
 
