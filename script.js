@@ -431,15 +431,42 @@
 //  *   *
 //  *****
 
-let n = 5
-let string = ""
+// let n = 5
+// let string = ""
 
-for(let i=0; i<n ; i++){
-    for(let j=0 ; j<n ; j++){
-        if(i===0 || i===n-1) string += "*"
-        else if(j===0 || j===n-1) string += "*"
-        else string += " "
+// for(let i=0; i<n ; i++){
+//     for(let j=0 ; j<n ; j++){
+//         if(i===0 || i===n-1) string += "*"
+//         else if(j===0 || j===n-1) string += "*"
+//         else string += " "
+//     }
+//     string += '\n'
+// }
+// console.log(string)
+
+// =========================================================
+
+//      *
+//     **
+//    ***
+//   ****
+//  *****
+
+let n=5
+let string=""
+
+for(let i=1 ; i<=n ; i++){
+    for(let j=1 ; j<=n-i ; j++) {
+        string+=" "
     }
-    string += '\n'
+    for(let k=1 ; k<=i ; k++){
+        string+="*"
+    }
+    string+="\n"
 }
 console.log(string)
+
+
+
+
+
