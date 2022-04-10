@@ -397,9 +397,49 @@
 
 // ==============================program to compute the union of two arrays=============
 
-const unionArray = (arr1 , arr2) =>{
-    console.log([...new Set(arr1.concat(arr2))])
+// const unionArray = (arr1 , arr2) =>{
+//     console.log([...new Set(arr1.concat(arr2))])
+// }
+
+// unionArray([1,2,3] , [2,3,4,5])
+
+
+// ====================================Patter Program=====================================
+
+//   *****
+//   *****
+//   *****
+//   *****
+//   *****
+
+// let n = 5
+// let string = ""
+
+// for(let i=0 ; i<n ; i++){
+//     for(let j=0 ; j<n ; j++){
+//         string += "*"
+//     }
+//     string += "\n"
+// }
+// console.log(string)
+
+// =========================================================================
+
+//  *****
+//  *   *
+//  *   *
+//  *   *
+//  *****
+
+let n = 5
+let string = ""
+
+for(let i=0; i<n ; i++){
+    for(let j=0 ; j<n ; j++){
+        if(i===0 || i===n-1) string += "*"
+        else if(j===0 || j===n-1) string += "*"
+        else string += " "
+    }
+    string += '\n'
 }
-
-unionArray([1,2,3] , [2,3,4,5])
-
+console.log(string)
