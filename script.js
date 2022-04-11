@@ -495,14 +495,35 @@
 //  **
 //  *
 
+// let n=5
+// let string=""
+
+// for(let i=0 ; i<n ; i++){
+//     for(let j=n ; j>i ; j--){
+//         string+="*"
+//     }
+//     string+="\n"
+// }
+// console.log(string)
+
+// ========================================================================
+
+//  *
+//  **
+//  * *
+//  *  *
+//  *   *
+//  ******
+
 let n=5
 let string=""
 
 for(let i=0 ; i<n ; i++){
-    for(let j=n ; j>i ; j--){
-        string+="*"
+    for(let j=0 ; j<=i ; j++){
+        if(i===0 || i===n-1) string+="*"
+        else if(j===0 || j===i) string+="*"
+        else string+=" "
     }
     string+="\n"
 }
 console.log(string)
-
