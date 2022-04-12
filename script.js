@@ -633,3 +633,42 @@
 //     string+='\n'
 // }
 // console.log(string)
+
+// ============================================================
+
+//      *
+//     * *
+//    *   *
+//   *     *
+//  *       *
+//   *     *
+//    *   *
+//     * *
+//      *
+
+let n=5
+let string=""
+
+for(let i=0 ; i<n ; i++){
+    for(let j=0 ; j<n-i-1 ; j++){
+        string+=" "
+    }
+    for(let k=0 ; k<2*i+1 ; k++){
+        if(k===0 || k===2*i) string+="*"
+        else string+=" "
+    }
+    string+="\n"
+}
+
+for(let i=0 ; i<n-1 ; i++){
+    string+=" "
+    for(let j=0 ; j<i ; j++){
+        string+=" "
+    }
+    for(let k=0 ; k<(n-i)*2 -3 ;k++){
+        if(k===0 || k===(n-i)*2-4) string+="*"
+        else string+=" "
+    }
+    string +="\n"
+}
+console.log(string)
