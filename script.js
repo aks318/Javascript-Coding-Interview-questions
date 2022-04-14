@@ -750,29 +750,29 @@
 //    **
 //     *
 
-let n=5
-let string=""
+// let n=5
+// let string=""
 
-for(let i=0 ; i<n ; i++){
-    for(let j=0 ; j<n-i-1 ; j++){
-        string+=" "
-    }
-    for(let k=0 ; k<=i ; k++){
-        string+="*"
-    }
-    string+="\n"
-}
-for(let i=0 ; i<n-1 ; i++){
-    string+=" "
-    for(let j=0 ; j<i ; j++){
-        string+= " "
-    }
-    for(let k=0 ; k<n-i-1 ; k++){
-        string+="*"
-    }
-    string+="\n"
-}
-console.log(string)
+// for(let i=0 ; i<n ; i++){
+//     for(let j=0 ; j<n-i-1 ; j++){
+//         string+=" "
+//     }
+//     for(let k=0 ; k<=i ; k++){
+//         string+="*"
+//     }
+//     string+="\n"
+// }
+// for(let i=0 ; i<n-1 ; i++){
+//     string+=" "
+//     for(let j=0 ; j<i ; j++){
+//         string+= " "
+//     }
+//     for(let k=0 ; k<n-i-1 ; k++){
+//         string+="*"
+//     }
+//     string+="\n"
+// }
+// console.log(string)
 
 // ===========================Double the value of each element in array using Map function=====================
 
@@ -784,7 +784,14 @@ console.log(string)
 
 // =====================Filter out the value equals to 2 from array=========================
 
-const filterValue = (arr) => {
-    return arr.filter(val => val !==2)
+// const filterValue = (arr) => {
+//     return arr.filter(val => val !==2)
+// }
+// console.log(filterValue([2,6,2,7,9,5,2,5,2]))
+
+// ===========================Sum of array using reduce function ==================================
+
+const arrSum = (arr) => {
+    return arr.reduce((acc , curr) => acc = acc + curr , 0)
 }
-console.log(filterValue([2,6,2,7,9,5,2,5,2]))
+console.log(arrSum([2,5,6,8,7,9]))
