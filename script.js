@@ -776,8 +776,15 @@ console.log(string)
 
 // ===========================Double the value of each element in array using Map function=====================
 
-const doubleValue = (arr) => {
-    return arr.map(val => val*2)
-}
+// const doubleValue = (arr) => {
+//     return arr.map(val => val*2)
+// }
 
-console.log(doubleValue([2,5,6,8,9]))
+// console.log(doubleValue([2,5,6,8,9]))
+
+// =====================Filter out the value equals to 2 from array=========================
+
+const filterValue = (arr) => {
+    return arr.filter(val => val !==2)
+}
+console.log(filterValue([2,6,2,7,9,5,2,5,2]))
