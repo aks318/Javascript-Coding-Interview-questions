@@ -773,3 +773,11 @@ for(let i=0 ; i<n-1 ; i++){
     string+="\n"
 }
 console.log(string)
+
+// ===========================Double the value of each element in array using Map function=====================
+
+const doubleValue = (arr) => {
+    return arr.map(val => val*2)
+}
+
+console.log(doubleValue([2,5,6,8,9]))
