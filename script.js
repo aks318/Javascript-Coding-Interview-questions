@@ -791,7 +791,26 @@
 
 // ===========================Sum of array using reduce function ==================================
 
-const arrSum = (arr) => {
-    return arr.reduce((acc , curr) => acc = acc + curr , 0)
+// const arrSum = (arr) => {
+//     return arr.reduce((acc , curr) => acc = acc + curr , 0)
+// }
+// console.log(arrSum([2,5,6,8,7,9]))
+
+
+// ==============================Higher Order Function Example=====================================
+
+const radiuses = [2,4,6,8,9]
+
+const area = (radius) => 3.14 * radius * radius
+const circum = (radius) => 2 * 3.14 * radius
+const diameter = (radius) => 2 * radius
+
+const calculate = (radiuses , logic) => {
+    let output = []
+    radiuses.forEach(radius => output.push(logic(radius)));
+    return output
 }
-console.log(arrSum([2,5,6,8,7,9]))
+
+console.log("Area of circle" , calculate(radiuses , area))
+console.log("Circum of circle" , calculate(radiuses , circum))
+console.log("Diameter of circle" , calculate(radiuses , diameter))
