@@ -799,18 +799,48 @@
 
 // ==============================Higher Order Function Example=====================================
 
-const radiuses = [2,4,6,8,9]
+// const radiuses = [2,4,6,8,9]
 
-const area = (radius) => 3.14 * radius * radius
-const circum = (radius) => 2 * 3.14 * radius
-const diameter = (radius) => 2 * radius
+// const area = (radius) => 3.14 * radius * radius
+// const circum = (radius) => 2 * 3.14 * radius
+// const diameter = (radius) => 2 * radius
 
-const calculate = (radiuses , logic) => {
-    let output = []
-    radiuses.forEach(radius => output.push(logic(radius)));
-    return output
+// const calculate = (radiuses , logic) => {
+//     let output = []
+//     radiuses.forEach(radius => output.push(logic(radius)));
+//     return output
+// }
+
+// console.log("Area of circle" , calculate(radiuses , area))
+// console.log("Circum of circle" , calculate(radiuses , circum))
+// console.log("Diameter of circle" , calculate(radiuses , diameter))
+
+
+// =====================================call , apply , bind===============================
+
+let a = {
+    firstName : "Akash",
+    lastName : "Karma",
+    fullName : function(city){
+        return `${this.firstName} ${this.lastName} ${city}`
+    }
+}
+// console.log(a.fullName("mumbai"))
+
+let b = {
+    firstName : "Kartik",
+    lastName : "Pahadi"
+}
+// console.log(a.fullName.call(b , "mumbai"))
+
+const fullName = function(city) { 
+    return `${this.firstName} ${this.lastName} ${city}`
 }
 
-console.log("Area of circle" , calculate(radiuses , area))
-console.log("Circum of circle" , calculate(radiuses , circum))
-console.log("Diameter of circle" , calculate(radiuses , diameter))
+console.log(fullName.call(a, "pune")) // invoked immediently
+console.log(fullName.apply(b, ["pune"])) //invoked immediently
+console.log(fullName.bind(a , "Mumbai")) //return new function
+
+const bindReturnFunc = fullName.bind(a , "mumbai")
+console.log(bindReturnFunc())
+console.log(fullName.bind(a , "Mumbai")())
