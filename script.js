@@ -818,29 +818,45 @@
 
 // =====================================call , apply , bind===============================
 
-let a = {
-    firstName : "Akash",
-    lastName : "Karma",
-    fullName : function(city){
-        return `${this.firstName} ${this.lastName} ${city}`
+// let a = {
+//     firstName : "Akash",
+//     lastName : "Karma",
+//     fullName : function(city){
+//         return `${this.firstName} ${this.lastName} ${city}`
+//     }
+// }
+// // console.log(a.fullName("mumbai"))
+
+// let b = {
+//     firstName : "Kartik",
+//     lastName : "Pahadi"
+// }
+// // console.log(a.fullName.call(b , "mumbai"))
+
+// const fullName = function(city) { 
+//     return `${this.firstName} ${this.lastName} ${city}`
+// }
+
+// console.log(fullName.call(a, "pune")) // invoked immediently
+// console.log(fullName.apply(b, ["pune"])) //invoked immediently
+// console.log(fullName.bind(a , "Mumbai")) //return new function
+
+// const bindReturnFunc = fullName.bind(a , "mumbai")
+// console.log(bindReturnFunc())
+// console.log(fullName.bind(a , "Mumbai")())
+
+
+// ===============================clousure===================================
+
+const A = () => {
+    let x = 1
+    let y = 1
+
+    return () => {
+        console.log(x+y)
     }
 }
-// console.log(a.fullName("mumbai"))
 
-let b = {
-    firstName : "Kartik",
-    lastName : "Pahadi"
-}
-// console.log(a.fullName.call(b , "mumbai"))
-
-const fullName = function(city) { 
-    return `${this.firstName} ${this.lastName} ${city}`
-}
-
-console.log(fullName.call(a, "pune")) // invoked immediently
-console.log(fullName.apply(b, ["pune"])) //invoked immediently
-console.log(fullName.bind(a , "Mumbai")) //return new function
-
-const bindReturnFunc = fullName.bind(a , "mumbai")
-console.log(bindReturnFunc())
-console.log(fullName.bind(a , "Mumbai")())
+const CF = A()
+console.log(CF)
+CF()
