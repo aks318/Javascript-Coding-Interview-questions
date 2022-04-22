@@ -848,18 +848,18 @@
 
 // ===============================clousure===================================
 
-const A = () => {
-    let x = 1
-    let y = 1
+// const A = () => {
+//     let x = 1
+//     let y = 1
 
-    return () => {
-        console.log(x+y)
-    }
-}
+//     return () => {
+//         console.log(x+y)
+//     }
+// }
 
-const CF = A()
-console.log(CF)
-CF()
+// const CF = A()
+// console.log(CF)
+// CF()
 
 // const fullName = function(city) { 
 //     return `${this.firstName} ${this.lastName} ${city}`
@@ -921,7 +921,33 @@ CF()
 
 // ===============================Prototype and Prototype-Chaining==========================
 
-arr = [1,2,3,4,5]
+// arr = [1,2,3,4,5]
 
-console.log(arr.__proto__ === Array.prototype)
-console.log(Array.prototype.__proto__ === Object.prototype)
+// console.log(arr.__proto__ === Array.prototype)
+// console.log(Array.prototype.__proto__ === Object.prototype)
+
+
+// =============================Hoisting========================
+
+
+// console.log(v1)  undefined
+// var v1=5
+
+// console.log(v2)  undefined
+// var v2
+// v2 = 5
+
+// v3=5
+// console.log(v3)  5
+// var v3
+
+// console.log(l1)  ReferenceError: Cannot access 'l1' before initialization
+// let l1=5
+
+// console.log(l2)  ReferenceError: Cannot access 'l1' before initialization
+// let l2
+// l2 = 5
+
+l3 = 5
+console.log(l3)
+let l3
