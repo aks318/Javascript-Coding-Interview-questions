@@ -860,3 +860,68 @@ const A = () => {
 const CF = A()
 console.log(CF)
 CF()
+
+// const fullName = function(city) { 
+//     return `${this.firstName} ${this.lastName} ${city}`
+// }
+
+// console.log(fullName.call(a, "pune")) // invoked immediently
+// console.log(fullName.apply(b, ["pune"])) //invoked immediently
+// console.log(fullName.bind(a , "Mumbai")) //return new function
+
+// const bindReturnFunc = fullName.bind(a , "mumbai")
+// console.log(bindReturnFunc())
+// console.log(fullName.bind(a , "Mumbai")())
+
+
+// ============================Ways Of Creating Objects in JS=======================================
+
+// 1.By object literal
+
+// let obj1 = {name : "Aaksh" , city : "Mumbai"}
+// console.log(obj1)
+
+// // 2. By creating instance of Object
+
+// let obj2 = new Object()
+// obj2.name = "Aakash"
+// obj2["city"] = {
+//     station : "Dahisar"
+// } 
+// console.log(obj2)
+
+// // 3.By using an Object constructor
+
+// function emp(id , name , salary){
+//     this.id = id
+//     this.name = name
+//     this.salary = salary
+// }
+//  let emp1 = new emp(1 , "Aakash" , 60000)
+//  let emp2 = new emp(2 , "Sandeep" , 55000)
+
+//  console.log(emp1)
+//  console.log(emp2)
+
+// //  4.Function Factory
+
+// const car = (name , cost) => {
+//     return {
+//         name,
+//         cost 
+//     }
+// }
+
+// let car1 = car("odi" , 6500000)
+// let car2 = car("ferrari" , 10500000)
+
+// console.log(car1)
+// console.log(car2)
+
+
+// ===============================Prototype and Prototype-Chaining==========================
+
+arr = [1,2,3,4,5]
+
+console.log(arr.__proto__ === Array.prototype)
+console.log(Array.prototype.__proto__ === Object.prototype)
