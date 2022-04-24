@@ -944,10 +944,24 @@
 // console.log(l1)  ReferenceError: Cannot access 'l1' before initialization
 // let l1=5
 
-// console.log(l2)  ReferenceError: Cannot access 'l1' before initialization
+// console.log(l2)  ReferenceError: Cannot access 'l2' before initialization
 // let l2
 // l2 = 5
 
-l3 = 5
-console.log(l3)
-let l3
+// l3 = 5
+// console.log(l3) ReferenceError: Cannot access 'l3' before initialization
+// let l3
+
+
+// ===============================Function Currying============================
+
+const add = (a) => (
+    (b) => (
+        (c) => (
+            a+b+c
+        )
+    )
+)
+
+console.log(add(8)(4)(2))
+
