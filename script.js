@@ -955,13 +955,21 @@
 
 // ===============================Function Currying============================
 
-const add = (a) => (
-    (b) => (
-        (c) => (
-            a+b+c
-        )
-    )
-)
+// const add = (a) => (
+//     (b) => (
+//         (c) => (
+//             a+b+c
+//         )
+//     )
+// )
 
-console.log(add(8)(4)(2))
+// console.log(add(8)(4)(2))
 
+
+let a = 1
+let b = 6
+
+a = a+b
+b = a-b
+a = a-b
+console.log(a , b)
