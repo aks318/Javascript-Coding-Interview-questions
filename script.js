@@ -965,11 +965,20 @@
 
 // console.log(add(8)(4)(2))
 
+//================================Swapping 2 no without using 3rd variable=================
 
-let a = 1
-let b = 6
+// let a = 1
+// let b = 6
 
-a = a+b
-b = a-b
-a = a-b
-console.log(a , b)
+// a = a+b
+// b = a-b
+// a = a-b
+// console.log(a , b)
+
+
+// =====================================Convert 2d Array into 1d array=====================
+
+let arr = [["a","b"] , ["c","d"] , ["e", "f"]]
+
+const resArr = arr.reduce((acc , curr) => acc.concat(curr) , [])
+console.log(resArr)
