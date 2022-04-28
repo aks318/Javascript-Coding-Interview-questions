@@ -978,7 +978,23 @@
 
 // =====================================Convert 2d Array into 1d array=====================
 
-let arr = [["a","b"] , ["c","d"] , ["e", "f"]]
+// let arr = [["a","b"] , ["c","d"] , ["e", "f"]]
 
-const resArr = arr.reduce((acc , curr) => acc.concat(curr) , [])
-console.log(resArr)
+// const resArr = arr.reduce((acc , curr) => acc.concat(curr) , [])
+// console.log(resArr)
+
+
+// =================================move all 0 at last in array====================================
+
+let arr = [1,5,0,2,0,3,6,0,0,1,0,2]
+
+arr.sort((a, b) => {
+    console.log(a,b)
+    if(a==0 && b!=0)
+        return 1;
+    else if (a!=0 && b==0)
+        return -1;
+    else 
+        return 0;
+});
+console.log(arr)
