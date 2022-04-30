@@ -986,15 +986,42 @@
 
 // =================================move all 0 at last in array====================================
 
-let arr = [1,5,0,2,0,3,6,0,0,1,0,2]
+// let arr = [1,5,0,2,0,3,6,0,0,1,0,2]
 
-arr.sort((a, b) => {
-    console.log(a,b)
-    if(a==0 && b!=0)
-        return 1;
-    else if (a!=0 && b==0)
-        return -1;
-    else 
-        return 0;
-});
-console.log(arr)
+// arr.sort((a, b) => {
+//     console.log(a,b)
+//     if(a==0 && b!=0)
+//         return 1;
+//     else if (a!=0 && b==0)
+//         return -1;
+//     else 
+//         return 0;
+// });
+// console.log(arr)
+
+
+// ====================================Debouncing Function============================================
+
+const clickMe = document.getElementById('click-me')
+
+const debounce = (fn , delay) => {
+    let timeOut
+    return function(){
+        if(timeOut) clearTimeout(timeOut)
+
+        timeOut = setTimeout(() => {
+            fn()
+        } , delay)
+    }
+}
+
+clickMe.addEventListener("click" , debounce((e) => {
+        console.log("Click")
+    } , 2000)
+)
+
+
+
+
+
+
