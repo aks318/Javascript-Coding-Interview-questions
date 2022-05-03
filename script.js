@@ -1002,26 +1002,35 @@
 
 // ====================================Debouncing Function============================================
 
-const clickMe = document.getElementById('click-me')
+// const clickMe = document.getElementById('click-me')
 
-const debounce = (fn , delay) => {
-    let timeOut
-    return function(){
-        if(timeOut) clearTimeout(timeOut)
+// const debounce = (fn , delay) => {
+//     let timeOut
+//     return function(){
+//         if(timeOut) clearTimeout(timeOut)
 
-        timeOut = setTimeout(() => {
-            fn()
-        } , delay)
-    }
-}
+//         timeOut = setTimeout(() => {
+//             fn()
+//         } , delay)
+//     }
+// }
 
-clickMe.addEventListener("click" , debounce((e) => {
-        console.log("Click")
-    } , 2000)
-)
-
-
+// clickMe.addEventListener("click" , debounce((e) => {
+//         console.log("Click")
+//     } , 2000)
+// )
 
 
+// ===============================Bubbling Example==============================
 
+const first = document.querySelector(".first")
+const second = document.querySelector(".second")
+const third = document.querySelector(".third")
+
+first.addEventListener("click" , () => {
+    console.log("First")} , true)
+second.addEventListener("click" , () => {
+    console.log("Second")} ,true)
+third.addEventListener("click" , () => {
+    console.log("Third")} , true)
 
