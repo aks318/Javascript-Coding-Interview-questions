@@ -1020,6 +1020,27 @@
 //     } , 2000)
 // )
 
+// =======================================Throttle Function=================================================
+
+const clickMe = document.getElementById('click-me')
+
+const throttle = (fn , delay) => {
+    let last = 0
+    return(...arg) => {
+        const now = new Date().getTime()
+        if(now - last < delay){
+            return
+        }
+        last = now
+        return fn(...arg)
+    }
+}
+
+clickMe.addEventListener("click" , throttle((e) => {
+    console.log("Click")
+} , 2000)
+)
+
 
 // ===============================Capturing Example==============================
 
@@ -1036,14 +1057,14 @@
 
 // ===============================Bubbling Example==============================
 
-const first = document.querySelector(".first")
-const second = document.querySelector(".second")
-const third = document.querySelector(".third")
+// const first = document.querySelector(".first")
+// const second = document.querySelector(".second")
+// const third = document.querySelector(".third")
 
-first.addEventListener("click" , () => {
-    console.log("First")})
-second.addEventListener("click" , () => {
-    console.log("Second")})
-third.addEventListener("click" , () => {
-    console.log("Third")})
+// first.addEventListener("click" , () => {
+//     console.log("First")})
+// second.addEventListener("click" , () => {
+//     console.log("Second")})
+// third.addEventListener("click" , () => {
+//     console.log("Third")})
 
