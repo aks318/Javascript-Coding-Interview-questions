@@ -1022,24 +1022,24 @@
 
 // =======================================Throttle Function=================================================
 
-const clickMe = document.getElementById('click-me')
+// const clickMe = document.getElementById('click-me')
 
-const throttle = (fn , delay) => {
-    let last = 0
-    return(...arg) => {
-        const now = new Date().getTime()
-        if(now - last < delay){
-            return
-        }
-        last = now
-        return fn(...arg)
-    }
-}
+// const throttle = (fn , delay) => {
+//     let last = 0
+//     return(...arg) => {
+//         const now = new Date().getTime()
+//         if(now - last < delay){
+//             return
+//         }
+//         last = now
+//         return fn(...arg)
+//     }
+// }
 
-clickMe.addEventListener("click" , throttle((e) => {
-    console.log("Click")
-} , 2000)
-)
+// clickMe.addEventListener("click" , throttle((e) => {
+//     console.log("Click")
+// } , 2000)
+// )
 
 
 // ===============================Capturing Example==============================
@@ -1068,3 +1068,28 @@ clickMe.addEventListener("click" , throttle((e) => {
 // third.addEventListener("click" , () => {
 //     console.log("Third")})
 
+
+// ===================================OOPS Basic===================================
+
+// Constructor
+function Book (title , book , name){
+    this.title = title,
+    this.book = book,
+    this.name = name
+    this.getWholeName = function(){
+        return `${this.title} ${this.book} ${this.name}`
+    }
+}
+
+// Prototype
+ Book.prototype.bookYear = "1968"
+ Book.prototype.yourAge = function(){
+     return 23
+ }
+
+const book1 = new Book("maths by me" , "maths" , "Aakash")
+const book2 = new Book("science by me" , "science" , "Aakash")
+console.log(book2)
+console.log(book2.getWholeName())
+console.log(book2.bookYear)
+console.log(book2.yourAge())
