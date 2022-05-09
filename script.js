@@ -1071,39 +1071,67 @@
 
 // ===================================OOPS Basic===================================
 
-// Constructor
-function Book (title , book , name){
-    this.title = title,
-    this.book = book,
-    this.name = name
-    this.getWholeName = function(){
-        return `${this.title} ${this.book} ${this.name}`
+// // Constructor
+// function Book (title , book , name){
+//     this.title = title,
+//     this.book = book,
+//     this.name = name
+//     this.getWholeName = function(){
+//         return `${this.title} ${this.book} ${this.name}`
+//     }
+// }
+
+// // Prototype
+//  Book.prototype.bookYear = "1968"
+//  Book.prototype.yourAge = function(){
+//      return 23
+//  }
+
+// const book1 = new Book("maths by me" , "maths" , "Aakash")
+// const book2 = new Book("science by me" , "science" , "Aakash")
+// // console.log(book2)
+// // console.log(book2.getWholeName())
+// // console.log(book2.bookYear)
+// // console.log(book2.yourAge())
+
+// //Inheritance
+
+// function Magazine (title , book , name , year){
+//     Book.call(this , title , book , name)
+//     this.year = year
+// }
+// //Inherit Prototype
+// Magazine.prototype = Object.create(Book.prototype)
+
+// //Use magazine constructor
+// Magazine.prototype.constructor = Magazine
+
+// const mag1 = new Magazine("Javascript By Me" , "Javascript" , "Aakash" , 1998)
+
+// console.log(mag1)
+// console.log(mag1.yourAge())
+
+// ===============Using ES6==============
+
+class Book {
+    constructor(title , author , year){
+        this.title = title,
+        this.author = author,
+        this.year = year
+    }
+
+    getSummary (){
+        return `${this.title} ${this.author} ${this.year}`
     }
 }
+const book1 = new Book("My book" , "Aakash" , 1998)
+console.log(book1)
 
-// Prototype
- Book.prototype.bookYear = "1968"
- Book.prototype.yourAge = function(){
-     return 23
- }
-
-const book1 = new Book("maths by me" , "maths" , "Aakash")
-const book2 = new Book("science by me" , "science" , "Aakash")
-// console.log(book2)
-// console.log(book2.getWholeName())
-// console.log(book2.bookYear)
-// console.log(book2.yourAge())
-
-//Inheritance
-
-function Magazine (title , book , name , year){
-    Book.call(this , title , book , name)
-    this.year = year
+class Magazine extends Book{
+    constructor(title , author , year , month){
+        super(title , author , year)   //To call parent constructor
+        this.month = month
+    }
 }
-//Inherit Prototype
-Magazine.prototype = Object.create(Book.prototype)
-
-const mag1 = new Magazine("Javascript By Me" , "Javascript" , "Aakash" , 1998)
-
+const mag1 = new Magazine("Javascpt" , "Aakash" , 1999 , 11)
 console.log(mag1)
-console.log(mag1.yourAge())
