@@ -1089,7 +1089,21 @@ function Book (title , book , name){
 
 const book1 = new Book("maths by me" , "maths" , "Aakash")
 const book2 = new Book("science by me" , "science" , "Aakash")
-console.log(book2)
-console.log(book2.getWholeName())
-console.log(book2.bookYear)
-console.log(book2.yourAge())
+// console.log(book2)
+// console.log(book2.getWholeName())
+// console.log(book2.bookYear)
+// console.log(book2.yourAge())
+
+//Inheritance
+
+function Magazine (title , book , name , year){
+    Book.call(this , title , book , name)
+    this.year = year
+}
+//Inherit Prototype
+Magazine.prototype = Object.create(Book.prototype)
+
+const mag1 = new Magazine("Javascript By Me" , "Javascript" , "Aakash" , 1998)
+
+console.log(mag1)
+console.log(mag1.yourAge())
