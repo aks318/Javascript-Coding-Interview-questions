@@ -1113,25 +1113,40 @@
 
 // ===============Using ES6==============
 
-class Book {
-    constructor(title , author , year){
-        this.title = title,
-        this.author = author,
-        this.year = year
-    }
+// class Book {
+//     constructor(title , author , year){
+//         this.title = title,
+//         this.author = author,
+//         this.year = year
+//     }
 
-    getSummary (){
-        return `${this.title} ${this.author} ${this.year}`
-    }
-}
-const book1 = new Book("My book" , "Aakash" , 1998)
-console.log(book1)
+//     getSummary (){
+//         return `${this.title} ${this.author} ${this.year}`
+//     }
+// }
+// const book1 = new Book("My book" , "Aakash" , 1998)
+// console.log(book1)
 
-class Magazine extends Book{
-    constructor(title , author , year , month){
-        super(title , author , year)   //To call parent constructor
-        this.month = month
-    }
+// class Magazine extends Book{
+//     constructor(title , author , year , month){
+//         super(title , author , year)   //To call parent constructor
+//         this.month = month
+//     }
+// }
+// const mag1 = new Magazine("Javascpt" , "Aakash" , 1999 , 11)
+// console.log(mag1)
+
+
+// ==========================let And var in for loop=============================
+
+for(var i=0 ; i<=5 ; i++){  //Prints 6s 6 after 2 seconds
+    setTimeout(() => {
+        console.log(i)
+    } , 2000)
 }
-const mag1 = new Magazine("Javascpt" , "Aakash" , 1999 , 11)
-console.log(mag1)
+
+for(let i=0 ; i<=5 ; i++){  //Prints 0 1 2 3 4 5 6 after 2 seconds
+    setTimeout(() => {
+        console.log(i)
+    } , 2000)
+}
