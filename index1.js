@@ -40,6 +40,8 @@ function twoSum(nums, target) {
 
 console.log(twoSum([2, 11, 7, 15], 9));
 
+// Array + target → Create Map → For each number calculate complement (target - current) → Check if complement exists → Yes: return stored index + current index → No: store current number and index → Continue
+
 // ==============================================================
 
 // Valid Anagram — LeetCode #242
@@ -82,5 +84,7 @@ function isAnagram(s, t) {
 
 console.log(isAnagram("anagram", "nagaram"));
 console.log(isAnagram("rat", "car"));
+
+// Two strings → Check lengths → Create Frequency Map → Count characters from first string → Decrease counts using second string → Check all frequencies are 0 → Yes: anagram → No: not anagram
 
 // Time complexity is O(n) and space complexity is O(n), where n is the length of the input strings. The Map stores the frequency of each unique character.
