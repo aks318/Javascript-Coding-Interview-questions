@@ -1,69 +1,62 @@
-// Problem: Valid Palindrome
+// Problem:
+// Given an integer array nums, return an array answer where answer[i] is the product of all elements of nums except nums[i].
 
-// Given a string s, check whether it is a palindrome after:
-//     Ignoring spaces and special characters.
-//     Treating uppercase and lowercase letters as the same.
+// Do not use division.
+// Solve in O(n) time.
 
-// Input:  "A man, a plan, a canal: Panama"
-// Output: true
+// Example 1:
+// Input:  nums = [1,2,3,4]
+// Output: [24,12,8,6]
 
-// After ignoring special characters and spaces:
-// amanaplanacanalpanama
-
-function validPalindrome(s: string) {
-  let left = 0;
-  let right = s.length - 1;
-
-  function isAlphaNumeric(char: string) {
-    return /[a-zA-Z0-9]/.test(char);
+function ProductOfOthers(array: number[]) {
+  const n = array.length;
+  const answer = new Array(n).fill(1);
+  //[1,1,1,1]
+  let prefix = 1;
+  for (let i = 0; i < n; i++) {
+    answer[i] = prefix;
+    prefix *= array[i];
   }
 
-  while (left < right) {
-    while (left < right && !isAlphaNumeric(s[left])) {
-      left++;
-    }
-    while (left < right && !isAlphaNumeric(s[right])) {
-      right--;
-    }
-
-    if (s[left].toLowerCase() !== s[right].toLowerCase()) {
-      console.log(s[left].toLowerCase(), s[right].toLowerCase());
-      return false;
-    }
-    left++;
-    right--;
+  let sufix = 1;
+  for (let i = n - 1; i >= 0; i--) {
+    answer[i] *= sufix;
+    sufix *= array[i];
   }
-  return true;
+  return answer;
+}
+console.log(ProductOfOthers([1, 2, 3, 4]));
+
+// ========================================================================================
+
+// Problem:
+// Given an unsorted array of integers, find the length of the longest consecutive sequence.
+// The solution must run in O(n) time.
+
+// Example:
+// Input:  nums = [100, 4, 200, 1, 3, 2]
+// Output: 4
+
+// Because the longest consecutive sequence is:
+// [1, 2, 3, 4]
+
+function longestConsecutiveSeq(arr: number[]) {
+  const set = new Set(arr);
+  let longest = 0;
+
+  for (const num of arr) {
+    if (!set.has(num - 1)) {
+      let current = num;
+      let count = 1;
+
+      while (set.has(current + 1)) {
+        current++;
+        count++;
+      }
+      longest = Math.max(count, longest);
+    }
+  }
+  return longest;
 }
 
-console.log(validPalindrome("A man, a plan, a canal: Panama"));
-// Time: O(n)
-// Space: O(1)
-
-// =====================================================================
-
-// Problem: Best Time to Buy and Sell Stock
-
-// Given an array prices, where prices[i] is the price of a stock on day i, find the maximum profit you can make by buying on one day and selling on a later day.
-// You can only buy before you sell.
-
-// Input:  [7, 1, 5, 3, 6, 4]
-// Output: 5
-
-// Buy at 1 and sell at 6:
-// 6 - 1 = 5
-
-function maxProfit(sales: number[]) {
-  let minPrice = sales[0];
-  let profit = 0;
-  for (let i = 1; i < sales.length; i++) {
-    if (sales[i] < minPrice) {
-      minPrice = sales[i];
-    }
-    const temProfit = sales[i] - minPrice;
-    if (temProfit > profit) profit = temProfit;
-  }
-  return profit;
-}
-
-console.log(maxProfit([7, 1, 5, 3, 6, 4]));
+console.log(longestConsecutiveSeq([100, 4, 200, 1, 3, 2]));
