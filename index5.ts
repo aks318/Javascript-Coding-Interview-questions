@@ -32,6 +32,10 @@ function longestSubstring(str: string): number {
 
 // console.log(longestSubstring("abcaacbbxyzl"));
 
+// Your approach: Sliding Window + Map
+// - Time: \(O(n)\) — Each character is processed in the loop, and the left pointer only moves forward.
+// - Space: \(O(k)\) — The map stores character indices, where \(k\) is the number of distinct characters encountered. More precisely, space is \(O(\min(n, |\Sigma|))\), where \(|\Sigma|\) is the character-set size.
+
 // ================================================================================================
 
 // Problem statement
@@ -61,3 +65,7 @@ function mostWaterContent(arr: number[]) {
 }
 
 console.log(mostWaterContent([1, 8, 6, 2, 5, 4, 8, 3, 7]));
+
+// Your approach: Two Pointers
+// - Time: \(O(n)\) — Both pointers move inward, and each iteration eliminates one or more possible pairs.
+// - Space: \(O(1)\) — Only a fixed number of variables are used, regardless of input size.
