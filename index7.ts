@@ -28,4 +28,46 @@ function dailyTemperatures(temperatures: number[]): number[] {
 }
 
 console.log(dailyTemperatures([73, 74, 75, 71, 69, 72, 76, 73]));
-// [1, 1, 4, 2, 1, 1, 0, 0]
+
+// - Time: \(O(n)\) — Each temperature index is pushed onto the stack once and popped at most once.
+// - Space: \(O(n)\) — The stack and answer array can each hold up to \(n\) elements.
+
+// ============================================================================================================
+
+// You are given an array of intervals where intervals[i] = [startᵢ, endᵢ].
+// Merge all overlapping intervals and return an array of the non-overlapping intervals that cover all the intervals in the input.
+// Example 1
+// Input:
+// intervals = [[1,3],[2,6],[8,10],[15,18]]
+// Output:
+// [[1,6],[8,10],[15,18]]
+
+function merge(intervals: number[][]): number[][] {
+  if (intervals.length === 0) return [];
+
+  // 1. Sort intervals by starting point
+  intervals.sort((a, b) => a[0] - b[0]);
+
+  // 2. Initialize result with the first interval
+  const result: number[][] = [intervals[0]];
+
+  // 3. Process remaining intervals
+  for (let i = 1; i < intervals.length; i++) {
+    const current = intervals[i];
+    const lastMerged = result[result.length - 1];
+
+    // 4. Check if intervals overlap
+    if (current[0] <= lastMerged[1]) {
+      // Merge by updating the ending point
+      lastMerged[1] = Math.max(lastMerged[1], current[1]);
+    } else {
+      // No overlap: add a new interval
+      result.push(current);
+    }
+  }
+
+  return result;
+}
+
+// Time: \(O(n \log n)\) — Sorting takes \(O(n \log n)\), and merging takes \(O(n)\).
+// Space: \(O(n)\) — The result array can contain up to \(n\) intervals.
