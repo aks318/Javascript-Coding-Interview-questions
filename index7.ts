@@ -14,7 +14,7 @@ function dailyTemperatures(temperatures: number[]): number[] {
 
   for (let i = 0; i < temperatures.length; i++) {
     while (
-      stack.length > 0 &&
+      stack.length &&
       temperatures[i] > temperatures[stack[stack.length - 1]]
     ) {
       const index = stack.pop()!;
@@ -71,3 +71,42 @@ function merge(intervals: number[][]): number[][] {
 
 // Time: \(O(n \log n)\) — Sorting takes \(O(n \log n)\), and merging takes \(O(n)\).
 // Space: \(O(n)\) — The result array can contain up to \(n\) intervals.
+
+// =========================================================================================
+
+// Example 1
+// Input:
+// intervals = [5,10,-5,-15]
+// Output:
+// -15
+
+function asteroids(arr: number[]): number[] {
+  const stack: number[] = [];
+
+  for (const i of arr) {
+    let add_to_stack = true;
+
+    while (stack.length && i < 0 && stack[stack.length - 1] > 0) {
+      const top = stack[stack.length - 1];
+
+      if (Math.abs(top) > Math.abs(i)) {
+        add_to_stack = false;
+        break;
+      } else if (Math.abs(top) === Math.abs(i)) {
+        stack.pop();
+        add_to_stack = false;
+        break;
+      } else {
+        stack.pop();
+      }
+    }
+
+    if (add_to_stack) stack.push(i);
+  }
+
+  return stack;
+}
+
+console.log(asteroids([20, 5, 10, -5, -15, -18, -18, 20])); // []
+
+console.log(asteroids([5, 10, -5, -15]));
